@@ -1,0 +1,176 @@
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="./LMLE/jemdoc.css" type="text/css">
+<title>Imbalanced Deep Learning by Minority Class Incremental Rectification</title>
+
+<style type="text/css">
+BODY {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 100% "Times New Roman", Times, serif; BACKGROUND: #ffffff; COLOR: #000; PADDING-TOP: 0px
+}
+.oneColFixCtr #container {
+	BORDER-BOTTOM: #000000 1px ;
+	TEXT-ALIGN: left;
+	BORDER-LEFT: #000000 1px ;
+	MARGIN: 0px auto;
+	WIDTH: 1000px;
+	BACKGROUND: #ffffff;
+	BORDER-TOP: #000000 1px ;
+	BORDER-RIGHT: #000000 1px 
+}
+.oneColFixCtr #mainContent {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 0px
+}
+.style1 {
+	FONT-SIZE: x-large
+}
+.style3 {
+	FONT-SIZE: small
+}
+.style4 {
+	FONT-SIZE: medium
+}
+.style5 {
+	FONT-SIZE: large; FONT-WEIGHT: bold
+}
+.style6 {
+	FONT-SIZE: large
+}
+.style7 {
+	TEXT-DECORATION: none
+}
+.style8 {
+	COLOR: #000000
+}
+.style9 {
+	COLOR: #000080
+}
+.style10 {
+	MARGIN-TOP: 5pt; MARGIN-BOTTOM: 5pt; FONT-SIZE: medium
+}
+.style11 {
+	MARGIN-TOP: 5pt; TEXT-INDENT: 15px; MARGIN-BOTTOM: 5pt; FONT-SIZE: medium
+}
+.style12 {
+	MARGIN-LEFT: 12pt; FONT-SIZE: medium; MARGIN-RIGHT: 12pt}
+.code {
+	FONT-FAMILY: "Courier New", Courier, monospace; FONT-SIZE: 15px
+}
+.codeline {
+	MARGIN-TOP: 5pt; TEXT-INDENT: 15px; FONT-FAMILY: "Courier New", Courier, monospace; MARGIN-BOTTOM: 5pt; FONT-SIZE: 15px
+}
+.DivCode {
+	BORDER-BOTTOM: #333 1px dashed; BORDER-LEFT: #333 1px dashed; WIDTH: 800px; BACKGROUND: #ffd; MARGIN-LEFT: 10pt; FONT-SIZE: medium; BORDER-TOP: #333 1px dashed; BORDER-RIGHT: #333 1px dashed
+}
+.auto-style5 {
+	MARGIN-TOP: 3pt; MARGIN-BOTTOM: 3pt; FONT-SIZE: 100%
+}
+.STYLE15 {FONT-SIZE: large; FONT-WEIGHT: bold; color: #FF0000; }
+#motion_channel {
+  padding-right: 0px;
+  padding-left: 20px;
+  float: right;
+  padding-bottom: 20px;
+  padding-top: 0px;
+}
+</style>
+
+<meta name="GENERATOR" content="MSHTML 8.00.7601.17744">
+
+        <script type="text/javascript">
+            
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-22940424-1']);
+            _gaq.push(['_trackPageview']);
+            
+            (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+            
+        </script>
+
+</head>
+<body class="oneColFixCtr">
+<div id="container">
+<div style="MARGIN-BOTTOM: 0pt" id="mainContent">
+  <h1 style="MARGIN-TOP: 18pt" align="center"><a style="COLOR: #000; TEXT-DECORATION: none">Imbalanced Deep Learning by Minority Class Incremental Rectification</a></h1>
+  <p style="MARGIN-TOP: 20pt" class="style6" align="center"><span class="style8"><a href="http://www.eecs.qmul.ac.uk/~qd301/">Qi Dong</a><sup>1</sup>, <span class="style6" style="MARGIN-TOP: 20pt"><a href="http://www.eecs.qmul.ac.uk/~sgg/" target="_blank">Shaogang Gong</a><sup>1</sup></span>, and</span> <span class="style6" style="MARGIN-TOP: 20pt"><a href="http://www.eecs.qmul.ac.uk/~xiatian/">Xiatian Zhu</a><sup>2</sup></span></p>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style4" align="center"><sup>1</sup>School of Electronic Engineering and Computer Science, Queen Mary University of London, UK. </p>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style4" align="center"> <sup>2</sup>Vision Semantics Ltd., London, UK. </p>
+ 
+
+<p class="style4" align="center"> <i> IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2018. </i></p>
+
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style4" align="center"><span class="style4">
+  [<a href="http://www.eecs.qmul.ac.uk/~qd301/papers/Imb_pami.pdf" target="_blank">PDF</a>]
+  [<a href="./LMLE/Slides.pdf" target="_blank">Slides</a>]
+  [<a href="./LMLE/Poster.pdf" target="_blank">Poster</a>] 
+  [<a href="./LMLE/lmle_code.zip"">Code</a>]
+</span>
+</p>
+
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
+</div>
+
+<div class="style12">
+  <h2>News  </h2>
+  <p class="style4" align="left">XXXXXX</a>. </p>
+<div align="center"></div>
+<div></div>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
+</div>
+
+
+<div class="style12">
+  <h2>Abstract  </h2>
+  <p class="style4" align="left">Model learning from class imbalanced training data is a long-standing and significant challenge for machine learning. In particular, existing deep learning methods consider mostly either class balanced data or moderately imbalanced data in model training, and ignore the challenge of learning from significantly imbalanced training data. To address this problem, we formulate a class imbalanced deep learning model based on batch-wise incremental minority (sparsely sampled) class rectification by hard sample mining in majority (frequently sampled) classes during model training. This model is designed to minimise the dominant effect of majority classes by discovering sparsely sampled boundaries of minority classes in an iterative batch-wise learning process. To that end, we introduce a Class Rectification Loss (CRL) function that can be deployed readily in deep network architectures. Extensive experimental evaluations are conducted on three imbalanced person attribute benchmark datasets (CelebA, X-Domain, DeepFashion) and one balanced object category benchmark dataset (CIFAR-100). These experimental results demonstrate the performance advantages and model scalability of the proposed batch-wise incremental minority class rectification model over the existing state-of-the-art models for addressing the problem of imbalanced data learning.
+</p>
+  <p align="center"><img src="./LMLE/motivation.png" width="588" height="242"></p>
+<div align="center"></div>
+<div></div>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
+</div>
+
+
+
+<div class="style12">
+<h2>Scalable Imbalanced Deep Learning</h2>
+<p class="style4" align="left">From Class-level <b>Triplet Embedding</b> to Cluster- & Class-level <b>Quintuplet Embedding</b>: preserving both locality across clusters and discrimination between classes, thus forming the local classification boundary resistent to class imbalance </p>
+  <ul>
+    <li> Training by a triple-header hinge loss to realize this objective </li>
+    <li> Equal class re-sampling & class costs assignment in mini-batches </li>
+    <li> Testing: Large margin cluster-wise kNN search </li>
+  </ul>
+<p align="center"><img src="./LMLE/method.png" width="913" height="228"></p>
+<p></p>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
+</div>
+
+
+<div class="style12">
+<h2>Results</h2>
+<ul>
+    <li> Face attribute prediction: highly imbalanced positive vs. negative class samples (average positive class rate <b>23%</b> for <b>40</b> attributes) </li>
+    <li> Edge detection: long-tailed distribution of edge structures </li>
+  </ul>
+<p align="center"><img src="./LMLE/results.png" width="940" height="309"></p>
+<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
+</div>
+
+
+<div class="style12">
+<h2>Citation</h2>
+
+<div class="style1">
+<pre>@inproceedings{huang2016lmle,
+ author = {Chen Huang and Yining Li and Chen Change Loy and Xiaoou Tang},
+ title = {Learning Deep Representation for Imbalanced Classification},
+ booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+ year = {2016},}</pre> 
+  
+</div>
+</div>
+
+</div></body></html>
