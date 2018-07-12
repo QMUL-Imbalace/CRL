@@ -22,7 +22,7 @@ BODY {
 	PADDING-BOTTOM: 0px; PADDING-LEFT: 20px; PADDING-RIGHT: 20px; PADDING-TOP: 0px
 }
 .style1 {
-	FONT-SIZE: x-large
+	FONT-SIZE: medium
 }
 .style3 {
 	FONT-SIZE: small
@@ -113,20 +113,14 @@ BODY {
 <p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
 </div>
 
-<div class="style12">
-  <h2>News  </h2>
-  <p class="style4" align="left"> </a>. </p>
-<div align="center"></div>
-<div></div>
-<p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
-</div>
+ 
 
 
 <div class="style12">
   <h2>Abstract  </h2>
-  <p class="style4" align="left">Model learning from class imbalanced training data is a long-standing and significant challenge for machine learning. In particular, existing deep learning methods consider mostly either class balanced data or moderately imbalanced data in model training, and ignore the challenge of learning from significantly imbalanced training data. To address this problem, we formulate a class imbalanced deep learning model based on batch-wise incremental minority (sparsely sampled) class rectification by hard sample mining in majority (frequently sampled) classes during model training. This model is designed to minimise the dominant effect of majority classes by discovering sparsely sampled boundaries of minority classes in an iterative batch-wise learning process. To that end, we introduce a Class Rectification Loss (CRL) function that can be deployed readily in deep network architectures. Extensive experimental evaluations are conducted on three imbalanced person attribute benchmark datasets (CelebA, X-Domain, DeepFashion) and one balanced object category benchmark dataset (CIFAR-100). These experimental results demonstrate the performance advantages and model scalability of the proposed batch-wise incremental minority class rectification model over the existing state-of-the-art models for addressing the problem of imbalanced data learning.
+  <p class="style4" align="left">Model learning from class imbalanced training data is a long-standing and significant challenge for machine learning (Fig. 1). In particular, existing deep learning methods consider mostly either class balanced data or moderately imbalanced data in model training, and ignore the challenge of learning from significantly imbalanced training data. To address this problem, we formulate a class imbalanced deep learning model based on batch-wise incremental minority (sparsely sampled) class rectification by hard sample mining in majority (frequently sampled) classes during model training. This model is designed to minimise the dominant effect of majority classes by discovering sparsely sampled boundaries of minority classes in an iterative batch-wise learning process. To that end, we introduce a Class Rectification Loss (CRL) function that can be deployed readily in deep network architectures. Extensive experimental evaluations are conducted on three imbalanced person attribute benchmark datasets (CelebA, X-Domain, DeepFashion) and one balanced object category benchmark dataset (CIFAR-100). These experimental results demonstrate the performance advantages and model scalability of the proposed batch-wise incremental minority class rectification model over the existing state-of-the-art models for addressing the problem of imbalanced data learning.
 </p>
-  <p align="center"><img src="./images/intro.png" width="900" height="250" ></p>
+  <p align="center"><img src="./images/intro_1.png" width="900" height="250" ></p>
 <div align="center"></div>
 <div></div>
 <p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
@@ -136,25 +130,33 @@ BODY {
 
 <div class="style12">
 <h2>Scalable Imbalanced Deep Learning</h2>
-<p class="style4" align="left">From Class-level <b>Triplet Embedding</b> to Cluster- & Class-level <b>Quintuplet Embedding</b>: preserving both locality across clusters and discrimination between classes, thus forming the local classification boundary resistent to class imbalance </p>
+<p class="style4" align="left">The proposed Class Rectification Loss (CRL) is a novel approach to imbalanced deep learning by minority class incremental rectification using batch-wise mining of hard samples on the minority classes in a batch-wise optimisation process (Fig. 2). The computational complexity of imposing this rectification loss is restrained by iterative mini-batch-wise model optimisation (small data pools). We explore a hard sample mining strategy to enhance minority class manifold rectification by selectively “borrowing” majority class samples from class decision boundary marginal (border) regions. Specifically, we estimate minority class neighbourhood structure by mining both hard-positive and hard-negative samples for every selected minority class in each mini-batch of training data (Fig. 3). Our idea is to rectify incrementally the per-batch class distribution bias of multi-labels in model learning. Hence, each improved intermediate model from per-batch training is less inclined towards the over-sampled majority classes and more discriminative to the under-sampled minority classes (Fig. 4)</p>
+<p align="center"><img src="./images/Framework_2.png" width="500" height="228"></p>
+<p align="center"><img src="./images/reason_3.png" width="500" height="200"></p>
+
   <ul>
-    <li> Training by a triple-header hinge loss to realize this objective </li>
-    <li> Equal class re-sampling & class costs assignment in mini-batches </li>
-    <li> Testing: Large margin cluster-wise kNN search </li>
+    <li> Incremental batch-wise class profiling for pointing out minority classes and majority classes. </li>
+    <li> There are two hardness metrics: (1) Score based: A model’s class prediction score, suitable for <b>class-level hard mining</b>. (2)Feature based: The feature distance between data points, suitable for <b>instance-level hard mining</b> (Fig. 5). </li>
+    <li> We design the CRL regularisation by the learning-to-rank principle specifically on the minority class hard samples; and explore three loss criteria for CRL at both class-level and instance-level: (1) <b>Relative Comparison</b>; (2) <b>Absolute Comparison</b>; and (3) <b>Distribution Comparison</b>. </li>
   </ul>
-<p align="center"><img src="./images/Framework.png" width="500" height="228"></p>
+<p align="center"><img src="./images/feat_vis_4.png" width="900" height="250" ></p>
+<p align="center"><img src="./images/feat_prob_5.png" width="900" height="250" ></p>
 <p></p>
 <p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
 </div>
 
 
 <div class="style12">
-<h2>Results</h2>
+<h2>Experimental Results</h2>
 <ul>
-    <li> Face attribute prediction: highly imbalanced positive vs. negative class samples (average positive class rate <b>23%</b> for <b>40</b> attributes) </li>
-    <li> Edge detection: long-tailed distribution of edge structures </li>
+    <li> CRL performs better on serious imbalanced classes than other baselines, as illustrated on face attribute recognition (Fig. 6) and clothing attribute recognition (Fig. 7). </li>
+<p align="center"><img src="./images/face_result_6.png" width="900" height="250" ></p>
+<p align="center"><img src="./images/cloth_result_7.png" width="900" height="250" ></p>
+    <li> CRL works for multi-label recogntion (Fig. 8).</li>
+<li> CRL is compatible with different basenets and even brings benefit on balanced data (Fig. 9).</li>
   </ul>
-<p align="center"><img src="./images/reason.png" width="500" height="200"></p>
+<p align="center"><img src="./images/df_8.png" width="500" height="200"></p>
+<p align="center"><img src="./images/cifar100_9.png" width="500" height="200"></p>
 <p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
 </div>
 
@@ -163,14 +165,21 @@ BODY {
 <h2>Citation</h2>
 
 <div class="style1">
+<pre> 
+@article{dong2017class,
+  title={Class rectification hard mining for imbalanced deep learning},
+  author={Dong, Qi and Gong, Shaogang and Zhu, Xiatian},
+  year={2017},
+  publisher={IEEE}
+}
+</pre>
 <pre>@article{dong2018imbalanced,
   title={Imbalanced Deep Learning by Minority Class Incremental Rectification},
   author={Dong, Qi and Gong, Shaogang and Zhu, Xiatian},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
   year={2018},
   publisher={IEEE}
-}</pre> 
-  
+}</pre>
 </div>
 </div>
 
