@@ -120,7 +120,7 @@ BODY {
   <h2>Abstract  </h2>
   <p class="style4" align="left">Model learning from class imbalanced training data is a long-standing and significant challenge for machine learning (Fig. 1). In particular, existing deep learning methods consider mostly either class balanced data or moderately imbalanced data in model training, and ignore the challenge of learning from significantly imbalanced training data. To address this problem, we formulate a class imbalanced deep learning model based on batch-wise incremental minority (sparsely sampled) class rectification by hard sample mining in majority (frequently sampled) classes during model training. This model is designed to minimise the dominant effect of majority classes by discovering sparsely sampled boundaries of minority classes in an iterative batch-wise learning process. To that end, we introduce a Class Rectification Loss (CRL) function that can be deployed readily in deep network architectures. Extensive experimental evaluations are conducted on three imbalanced person attribute benchmark datasets (CelebA, X-Domain, DeepFashion) and one balanced object category benchmark dataset (CIFAR-100). These experimental results demonstrate the performance advantages and model scalability of the proposed batch-wise incremental minority class rectification model over the existing state-of-the-art models for addressing the problem of imbalanced data learning.
 </p>
-  <p align="center"><img src="./images/intro_1.png" width="900" height="250" ></p>
+  <p align="center"><img src="./images/intro.png" width="900" height="250" ></p>
 <div align="center"></div>
 <div></div>
 <p style="MARGIN-TOP: 5pt; margin-bottom: 5pt;" class="style3" align="center">&nbsp;</p>
@@ -131,8 +131,8 @@ BODY {
 <div class="style12">
 <h2>Scalable Imbalanced Deep Learning</h2>
 <p class="style4" align="left">The proposed Class Rectification Loss (CRL) is a novel approach to imbalanced deep learning by minority class incremental rectification using batch-wise mining of hard samples on the minority classes in a batch-wise optimisation process (Fig. 2). The computational complexity of imposing this rectification loss is restrained by iterative mini-batch-wise model optimisation (small data pools). We explore a hard sample mining strategy to enhance minority class manifold rectification by selectively “borrowing” majority class samples from class decision boundary marginal (border) regions. Specifically, we estimate minority class neighbourhood structure by mining both hard-positive and hard-negative samples for every selected minority class in each mini-batch of training data (Fig. 3). Our idea is to rectify incrementally the per-batch class distribution bias of multi-labels in model learning. Hence, each improved intermediate model from per-batch training is less inclined towards the over-sampled majority classes and more discriminative to the under-sampled minority classes (Fig. 4)</p>
-<p align="center"><img src="./images/Framework_2.png" width="500" height="228"></p>
-<p align="center"><img src="./images/reason_3.png" width="500" height="200"></p>
+<p align="center"><img src="./images/Framework.png" width="500" height="228"></p>
+<p align="center"><img src="./images/reason.png" width="500" height="200"></p>
 
   <ul>
     <li> Incremental batch-wise class profiling for pointing out minority classes and majority classes. </li>
